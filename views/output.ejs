@@ -5,18 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Generated Icons & Splash Screens</title>
   <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    if (localStorage.theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
 </head>
-<body class="bg-gray-50 min-h-screen">
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
   <div class="max-w-6xl mx-auto py-8 px-4">
-    <h1 class="text-3xl font-bold text-center text-indigo-600 mb-6">
+    <h1 class="text-3xl font-bold text-center text-indigo-600 dark:text-indigo-600 mb-6">
       🎨 Generated Icons & Splash Screens
     </h1>
-    <p class="text-center text-gray-600 mb-8">
+    <p class="text-center text-gray-600 dark:text-gray-200 mb-8">
       Pilih file yang ingin diunduh sebagai ZIP.
     </p>
 
     <div class="flex justify-center mb-6 space-x-4">
-      <button id="selectAllBtn" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
+      <button id="selectAllBtn" class="bg-indigo-600 dark:bg-indigo-500
+ text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
         Pilih Semua
       </button>
       <button id="downloadSelectedBtn" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
@@ -33,9 +41,9 @@
           <div class="bg-white rounded-lg shadow p-4 flex flex-col items-center relative">
             <input type="checkbox" name="files" value="<%= img %>" class="absolute top-2 left-2 w-5 h-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 select-checkbox">
             <img src="/output/<%= img %>" alt="<%= img %>" class="w-full h-auto max-h-64 object-contain mb-4 rounded">
-            <p class="text-sm text-gray-700 mb-2 text-center break-all"><%= img %></p>
+            <p class="text-sm text-gray-700 dark:text-gray-800 mb-2 text-center break-all"><%= img %></p>
             <a href="/output/<%= img %>" download
-               class="inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
+               class="inline-block bg-indigo-600 dark:bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
               Download
             </a>
           </div>
@@ -44,7 +52,7 @@
     </form>
 
     <div class="text-center mt-10">
-      <a href="/" class="inline-block bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 transition">
+      <a href="/" class="inline-block bg-gray-300 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-4 py-2 rounded hover:bg-gray-400 transition">
         Upload Another Logo
       </a>
     </div>

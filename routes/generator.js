@@ -12,7 +12,6 @@ const {
 
 const router = express.Router()
 
-// Ensure folders
 ;['uploads', 'public/output'].forEach(folder => {
   if (!fs.existsSync(folder)) fs.mkdirSync(folder, { recursive: true })
 })
